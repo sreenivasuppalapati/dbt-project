@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: wenco_landing
+    #database: "{{env_var('DBT_DB')}}"
+    database: fqm_kansanshi_share
+    schema: RAW
+    tables:
+      - name: alarm_v2
