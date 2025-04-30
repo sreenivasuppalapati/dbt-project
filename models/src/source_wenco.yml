@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: wenco_source
+    database: FQM_KANSANSHI_SHARE
+    schema: RAW
+    tables:
+      - name: ALARM_V2
