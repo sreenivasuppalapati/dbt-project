@@ -1,0 +1,1 @@
+select * from {{ref ('certified_alarm_v2')}}
