@@ -6,3 +6,9 @@ sources:
     schema: RAW
     tables:
       - name: ALARM_V2
+
+  - name: internal_source
+    database: internal
+    schema: landing
+    tables:
+      - name: RL_IO_ASSET_ALARM_METADATA_V1
