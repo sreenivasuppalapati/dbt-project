@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: landing_alarm_v2
+    description: "This table contains the alarm data from all wenco devices"
+    columns:
+      - name: alert_id
+        description: "key field for alerts"
+        tests:
+          - not_null
+
+      - name: asset_id
+        description: "key field for assets"
+        tests:
+          - not_null
+
+      - name: alarm_id
+        description: "key field for alarms"
+        tests:
+          - not_null
+
+      - name: activated_at
+        description: "The time when the alarm got activated."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "<= CURRENT_TIMESTAMP()"
+
+      - name: deactivated_at
+        description: "The time when the alarm got deactivated."
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "TRY_TO_TIMESTAMP(deactivated_at)"
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - asset_id
+            - alarm_id
+            - activated_at

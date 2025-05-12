@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: wenco_source
+    database: FQM_KANSANSHI_SHARE
+    schema: RAW
+    tables:
+      - name: ALARM_V2
+
+  - name: internal_source
+    database: INTERNAL
+    schema: LANDING
+    tables:
+      - name: RL_IO_ASSET_ALARM_METADATA_V1
