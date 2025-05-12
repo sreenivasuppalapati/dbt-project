@@ -8,7 +8,7 @@ sources:
       - name: ALARM_V2
 
   - name: internal_source
-    database: internal
-    schema: landing
+    database: INTERNAL
+    schema: LANDING
     tables:
       - name: RL_IO_ASSET_ALARM_METADATA_V1
